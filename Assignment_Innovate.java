@@ -19,7 +19,12 @@ public class Assignment_Innovate {
         Resort rObj1 =  new Resort();
         int i = rObj1.bookGolfCourse(1);
         System.out.println("You have booked golf course number "+i);
+        System.out.println("======================================================");
 
+        HotelRestaurant hr = new HotelRestaurant();
+        hr.setCustInfo("Ram","Male",87577363,1);
+        System.out.println(hr);
+        hr.bookRoom("Ram",3);
     }
 
 }
@@ -119,5 +124,28 @@ class Resort extends Hotel {
         this.golfCourseNumber = golfCourseNumber;
         System.out.println("Booking golfCourse");
         return golfCourseNumber;
+    }
+}
+class HotelRestaurant extends Hotel
+{
+    int tables;
+    String Food;
+    float price;
+
+    void setCustInfo(String customerName,String gender, long contactNumber,int tables)
+    {
+        System.out.println("Enter your Info..");
+        super.setCustInfo(customerName,gender,contactNumber);
+        this.tables = tables;
+    }
+    int bookRoom(String customerName, int numberOfGuests)
+    {
+        System.out.println("Booked a table");
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "HotelRestaurant[BookingTable "+tables +",InTheNameOf= "+customerName+ ",for "+numberOfGuests + "guests]";
     }
 }

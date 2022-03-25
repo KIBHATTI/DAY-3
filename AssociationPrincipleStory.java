@@ -1,4 +1,5 @@
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
+//import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
 public class AssociationPrincipleStory {
     public static void main(String args[])
@@ -11,7 +12,7 @@ public class AssociationPrincipleStory {
         KFC kfcObj1 = branchObj.branchType();
 
         GasBill1 gasObj = restaurantObj.useGas("Gas bill is Rs.");
-        System.out.println(gasObj);
+        System.out.println("HERE "+gasObj);
 
         Person personObj = new Person();
         Vehicle vehicleObj = personObj.typeOfVehicle("two wheeler");
@@ -26,6 +27,7 @@ public class AssociationPrincipleStory {
 
         ClassRoom classRoomObj = new ClassRoom("In classroom");
         Student studentObj = new Student();
+        
         studentObj.giveExam(classRoomObj);
         System.out.println(studentObj);
 
@@ -122,13 +124,32 @@ class Person
 class Student extends Person
 {
     String cr;
+    
+    Library readBook(Book b)
+    {
+    	Library lib = new Library();
+    	return lib;
+    }
+    Laptop laptopObj = new Laptop(); //hasA
     Exam giveExam(ClassRoom cr) //usesA
     {
-
         Exam examObj = new Exam();
         return examObj;
     }
 }
+class Book{
+	String bookName;
+	public Book(String bookName)
+	{
+		this.bookName = bookName;
+		System.out.println("Student is reading book "+bookName);
+	}
+}
+class Library
+{
+	
+}
+class Laptop{} 
 class ClassRoom
 {
     String classroom;
@@ -150,7 +171,9 @@ class Exam{
 
 
 }
-class Result{}
+final class Result{
+	
+}
 class ReportCard{}
 
 class Vacation{}
@@ -242,8 +265,8 @@ class Shirt
 //                '}';
    // }
 }
+
 class Music{}
 
 class Guitar{}
-
 

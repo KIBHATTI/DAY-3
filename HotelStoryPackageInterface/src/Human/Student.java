@@ -1,10 +1,11 @@
 package Human;
-import Transport.TwoWheeler;
-//import Transport.FourWheeler;
+import Transport.Vehicle;
+
 import Electronics.Laptop;
 import Examination.Exam;
 
-public class Student extends Man implements Man.MobilityFeature {
+public class Student extends Man
+{
     //TwoWheeler twoWheelerObj = new TwoWheeler();
     String studentName;
     public String typeOfVehicle;
@@ -18,20 +19,12 @@ public class Student extends Man implements Man.MobilityFeature {
         this.studentName = studentName;
     }
 
-//    @Override
-//    public void drive(String typeOfVehicle) {
-//        System.out.println("Student is driving " + typeOfVehicle);
-//    }
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentName='" + studentName + '\'' +
+                '}';
+    }
 
-    //    @Override
-//    public void pullGear2Wheeler() {
-//        System.out.println("pulling gear of " + typeOfVehicle);
-//    }
-//    Exam givingExam(Laptop whichlaptop1)
-//    {
-//        this.whichLaptop1 = whichLaptop1;
-//       // Exam examObj = new Exam();
-//        System.out.println("student is giving exam using Laptop "+whichLaptop1);
-//        return examObj;
-//    }
+
 }

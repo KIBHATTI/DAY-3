@@ -1,12 +1,16 @@
 package Transport;
 
-public class Vehicle
-{
-    interface  VehicleRuns{
-        void  pressAccerlator();
-    }
-    interface  ChangeGear{
-        void pullGear();
-    }
 
+interface  VehicleRuns{
+    void  pressAccerlator();
+}
+interface  ChangeGear{
+    void pullGear();
+}
+public class Vehicle implements ChangeGear
+{
+    @Override
+    public void pullGear() {
+
+    }
 }
